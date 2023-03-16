@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+FILENAME="scratch.md"
+DIRNAME=~/sync/yandex-disk/work/$(date +%Y-%m-%d)
+[ -d $DIRNAME ] || mkdir -p $DIRNAME
+cd $DIRNAME
+touch $FILENAME && gvim $FILENAME 2>/dev/null & disown
