@@ -3,10 +3,10 @@
 STATE="$1"
 case $STATE in
     'ON'|'on')
-    sed -i '/#pracuj, kurwa!/,+1  s/^#0/0/' /etc/hosts
+    sed '/#pracuj, kurwa!/,+1  s/^#0/0/' /etc/hosts | sponge /etc/hosts
     ;;
     'OFF'|'off')
-    sed -i '/#pracuj, kurwa!/,+1  s/^0/#0/' /etc/hosts
+    sed '/#pracuj, kurwa!/,+1  s/^0/#0/' /etc/hosts | sponge /etc/hosts
     ;;
     *)
     echo 'idi domoy'
